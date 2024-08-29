@@ -16,10 +16,10 @@
                     <div class="collapse navbar-collapse justify-content-center">
                         <ul class="nav col-12 col-md-auto  main-menu">
 
-                            <li><a href={{url('/index')}} class="nav-link @yield('index-active')">Home</a></li>
-                            <li><a href={{url('/about-us')}} class="nav-link  @yield('about-active')">About Us</a></li>
-                            <li><a href={{url('/port')}} class="nav-link  @yield('port-active')">Our Portfolio</a></li>
-                            <li><a href={{url('/contact-us')}} class="nav-link  @yield('contact-active')">Contact Us</a></li>
+                            <li><a href={{url('/')}} class="nav-link {{ request()->is('/') ? 'active' : '' }}">Home</a></li>
+                            <li><a href={{url('/about-us')}} class="nav-link">About Us</a></li>
+                            <li><a href={{url('/port')}} class="nav-link  ">Our Portfolio</a></li>
+                            <li><a href={{url('/contact-us')}} class="nav-link ">Contact Us</a></li>
 
                         </ul>
                     </div>

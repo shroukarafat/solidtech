@@ -55,7 +55,9 @@
     <!--build:css-->
     <link rel="stylesheet" href="{{asset('front-assets')}}/css/main.css">
     <!-- endbuild -->
-
+ <style> .nav-link.active{    
+color: var(--bs-accent-500);}
+</style>
     <!--custom css start-->
     <link rel="stylesheet" href="{{asset('front-assets')}}/css/custom.css">
     <!--custom css end-->

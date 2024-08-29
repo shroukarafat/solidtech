@@ -12,54 +12,21 @@ class HomepageController extends Controller
      */
     public function index()
     {
-        //
+        return view('front.index');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function aboutUs()
     {
-        //
+        return view('front.about-us');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function contactUs()
     {
-        //
+        return view('front.contact-us');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(homepage $homepage)
+    public function portfolio()
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(homepage $homepage)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, homepage $homepage)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(homepage $homepage)
-    {
-        //
+        return view('front.port');
     }
 }

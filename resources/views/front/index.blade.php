@@ -1,5 +1,4 @@
 @extends('front.layout')
-@section('index-active','active')
 @section('title','index')
 
 
