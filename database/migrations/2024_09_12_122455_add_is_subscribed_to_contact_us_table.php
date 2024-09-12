@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('contact_uses', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::table('contact_us', function (Blueprint $table) {
+            $table->boolean('is_subscribed')->default(false); 
         });
     }
 
@@ -22,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('contact_uses');
+        Schema::table('contact_us', function (Blueprint $table) {
+            $table->dropColumn('is_subscribed');
+        });
     }
 };

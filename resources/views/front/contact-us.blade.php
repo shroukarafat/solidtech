@@ -6,7 +6,7 @@
 
 
                     
-         <!--page header section start-->
+         
          <section class="page-header position-relative overflow-hidden ptb-120 bg-dark text-center " style="background: url('assets/img/hero-9.png')no-repeat center center">
             <div class="container">
                 <div class="row justify-content-center">
@@ -19,7 +19,7 @@
         </section>
         <!--page header section end-->
 
-        <!--contact us promo section start-->
+        
         <section class="contact-promo ptb-120">
             <div class="container">
                 <div class="row justify-content-center">
@@ -67,48 +67,71 @@
                         <div class="section-heading">
                             <h2 class="text-capitalize text-center">our team is here to help</h2>
                         </div>
-                        <form action="#" class="register-form">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <label for="firstName" class="mb-1">Name<span class="text-danger">*</span></label>
-                                    <div class="input-group mb-3">
-                                        <input type="text" class="form-control" id="firstName" required placeholder="Name" aria-label="First name">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <label for="firstName" class="mb-1">Company or Organization</label>
-                                    <div class="input-group mb-3">
-                                        <input type="text" class="form-control" id="firstName" required placeholder="Company or Organization" aria-label="First name">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <label for="phone" class="mb-1">Phone </label>
-                                    <div class="input-group mb-3">
-                                        <input type="text" class="form-control" id="phone" required placeholder="Phone" aria-label="Phone">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <label for="email" class="mb-1">Email<span class="text-danger">*</span></label>
-                                    <div class="input-group mb-3">
-                                        <input type="email" class="form-control" id="email" required placeholder="Email" aria-label="Email">
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <label for="yourMessage" class="mb-1">Message <span class="text-danger">*</span></label>
-                                    <div class="input-group mb-3">
-                                        <textarea class="form-control" id="yourMessage" required placeholder="How can we help you?" style="height: 120px"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                            <button type="submit" class="btn btn-accent mt-4">Get in Touch</button>
-                        </form>
+
+                
+                        @if (session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
                     </div>
+                @endif
 
-                </div>
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
+                <form action="{{ route('contact.submit') }}" method="POST" class="register-form">
+                    @csrf 
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <label for="name" class="mb-1">Name<span class="text-danger">*</span></label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" id="name" name="name" required placeholder="Name" value="{{ old('name') }}">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="company" class="mb-1">Company or Organization <span class="text-danger">*</span></label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" id="company" name="company" required placeholder="Company or Organization" value="{{ old('company') }}">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="phone" class="mb-1">Phone <span class="text-danger">*</span></label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" id="phone" name="phone" required placeholder="Phone" value="{{ old('phone') }}">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="email" class="mb-1">Email<span class="text-danger">*</span></label>
+                            <div class="input-group mb-3">
+                                <input type="email" class="form-control" id="email" name="email" required placeholder="Email" value="{{ old('email') }}">
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label for="message" class="mb-1">Message <span class="text-danger">*</span></label>
+                            <div class="input-group mb-3">
+                                <textarea class="form-control" id="message" name="message" required placeholder="How can we help you?" style="height: 120px">{{ old('message') }}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="subscribe">
+                            <input type="checkbox" name="subscribe" id="subscribe" value="1">
+                            Subscribe
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-accent mt-4">Get in Touch</button>
+                </form>
             </div>
-        </section>
-        <!--contact us form end-->
-        @endsection
+        </div>
+    </div>
+</section>
+<!--contact us form end-->
 
-
-       
+@endsection

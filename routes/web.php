@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomepageController;
-
+use App\Http\Controllers\ContactUsController;
+use App\Http\Controllers\SubscribeController;
 
 
 Route::get('/', [HomepageController::class,"index"]);
@@ -16,4 +17,9 @@ Route::get('/contact-us.html', [HomepageController::class, 'contactUs']);
 Route::get('/port', [HomepageController::class, 'portfolio']);
 Route::get('/port.html', [HomepageController::class, 'portfolio']);
 
+Route::get('/contact-us', [ContactUsController::class, 'showForm'])->name('contact.form');
+Route::post('/contact-us', [ContactUsController::class, 'submitForm'])->name('contact.submit');
+
+Route::get('/subscribe', [SubscribeController::class, 'showForm'])->name('subscribe.form');
+Route::post('/subscribe', [SubscribeController::class, 'submitForm'])->name('subscribe.submit');
 
