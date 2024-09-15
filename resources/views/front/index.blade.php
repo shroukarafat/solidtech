@@ -5,21 +5,19 @@
 
 @section('contant')
 
-
-<!--hero section start-->
 <section class="hero-it-solution hero-nine-bg ptb-120"
             style="background: url('{{asset('front-assets')}}/img/hero-9.png')no-repeat center center">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-md-10">
                         <div class="hero-content-wrap mt-5 mt-lg-0 mt-xl-0">
-                            <h1 class="fw-bold display-5 h-hero-h1">Building Tomorrow’s Digital Solutions,
-                                <span>Today.</span></h1>
-                            <p class="lead">
-                                We specialize in crafting advanced digital solutions tailored to your business needs.
-                                From innovative mobile apps to robust web applications, we drive digital transformation
-                                and help businesses thrive in the modern landscape.
-                            </p>
+                        <h1 class="fw-bold display-5 h-hero-h1">
+    {{ trans_key('hero_title') }}
+</h1>
+<p class="lead">
+    {{ trans_key('hero_description') }}
+</p>
+  
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -35,6 +33,7 @@
             </div>
         </section>
         <!--hero section end-->
+<!--hero section start-->
 
         <!--about us start-->
         <section class="promo-section ptb-120">

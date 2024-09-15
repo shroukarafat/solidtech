@@ -1,7 +1,7 @@
 <header class="main-header position-absolute w-100 ">
             <nav class="navbar navbar-expand-xl navbar-dark sticky-header z-10">
                 <div class="container d-flex align-items-center justify-content-lg-between position-relative">
-
+               
                     <a href="/index.html" class="navbar-brand d-flex align-items-center mb-md-0 text-decoration-none ">
                         <img src="{{asset('front-assets')}}/img/logo-white.png" alt="logo" class="img-fluid logo-white" />
                         <img src="{{asset('front-assets')}}/img/logo-color.png" alt="logo" class="img-fluid logo-color" />
@@ -23,6 +23,8 @@
 
                         </ul>
                     </div>
+                  <!-- resources/views/layouts/app.blade.php -->
+
 
                     <ul class="list-unstyled list-inline footer-social-list d-flex mb-0">
 
@@ -50,12 +52,15 @@
                                 <i class="fab fa-tiktok"></i>
                             </a> 
                         </li>
-
                     </ul>
-
                 </div>
-            </nav>
-
+            <form method="GET" action="{{ route('set-language') }}">
+    <select name="lang" onchange="this.form.submit()">
+        <option value="en" {{ session('lang') == 'en' ? 'selected' : '' }}>En</option>
+        <option value="ar" {{ session('lang') == 'ar' ? 'selected' : '' }}>Ar</option>
+    </select>
+</form>
+</nav>
             <!--offcanvas menu start-->
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasWithBackdrop">
                 <div class="offcanvas-header d-flex align-items-center mt-4">

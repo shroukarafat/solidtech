@@ -1,10 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\App;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\SubscribeController;
-
+use App\Http\Controllers\LanguageController;
 
 Route::get('/', [HomepageController::class,"index"]);
 Route::get('/index.html', [HomepageController::class,"index"]);
@@ -22,4 +23,8 @@ Route::post('/contact-us', [ContactUsController::class, 'submitForm'])->name('co
 
 Route::get('/subscribe', [SubscribeController::class, 'showForm'])->name('subscribe.form');
 Route::post('/subscribe', [SubscribeController::class, 'submitForm'])->name('subscribe.submit');
+
+ 
+Route::get('set-language', [LanguageController::class, 'setLanguage'])->name('set-language');
+
 
