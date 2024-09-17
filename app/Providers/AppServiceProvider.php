@@ -1,28 +1,17 @@
 <?php
-
 namespace App\Providers;
 
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
-    /**
-     * Register any application services.
-     */
-    public function register(): void
+    public function boot()
     {
-        //
+        
+        
+        app()->setLocale(request()->input('locale', 'en'));
     }
-
-    /**
-     * Bootstrap any application services.
-     */
     
-        public function boot()
-{
-    // Set the locale from session or default to 'en'
-    app()->setLocale(session('locale', config('app.locale')));
 }
-
-    }
-

@@ -5,10 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Translation extends Model
+class PageContent extends Model
 {
     use HasFactory;
-   // protected $fillable = ['lang_code', 'key', 'value'];
+    protected $table = 'page_contents';
+    protected $fillable = ['page', 'key','value','locale'];
 }
-    
-

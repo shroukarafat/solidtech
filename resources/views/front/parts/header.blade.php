@@ -54,10 +54,10 @@
                         </li>
                     </ul>
                 </div>
-            <form method="GET" action="{{ route('set-language') }}">
-    <select name="lang" onchange="this.form.submit()">
-        <option value="en" {{ session('lang') == 'en' ? 'selected' : '' }}>En</option>
-        <option value="ar" {{ session('lang') == 'ar' ? 'selected' : '' }}>Ar</option>
+                <form method="GET" action="{{ route('content.index') }}">
+    <select name="locale" onchange="this.form.submit()">
+        <option value="en" {{ app()->getLocale() === 'en' ? 'selected' : '' }}>English</option>
+        <option value="ar" {{ app()->getLocale() === 'ar' ? 'selected' : '' }}>Arabic</option>
     </select>
 </form>
 </nav>

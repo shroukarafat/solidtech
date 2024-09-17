@@ -11,13 +11,9 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-md-10">
                         <div class="hero-content-wrap mt-5 mt-lg-0 mt-xl-0">
-                        <h1 class="fw-bold display-5 h-hero-h1">
-    {{ trans_key('hero_title') }}
-</h1>
-<p class="lead">
-    {{ trans_key('hero_description') }}
-</p>
-  
+                        <h1 class="fw-bold display-5 h-hero-h1">{{ $content['hero_title'] ?? 'Default Title' }}</h1>
+<p class="lead">{{ $content['hero_text'] ?? 'Default text' }}</p>
+
                         </div>
                     </div>
                     <div class="col-lg-6">
